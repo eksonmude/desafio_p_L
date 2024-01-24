@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Grape+Nuts&display=swap');
+
+/* fonts: Cabin, Grape Nuts (hand drawn) */
+
+.fullScreen {
+   width: 100vw;
+   height: 100vh;
+}
+
+.flexCenter {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body,
+.container {
+   .fullScreen;
+}
+
+body {
+   font-family: Cabin;
+   color: white;
+   background-image: url("../img/bg1.png");
+   background-repeat: no-repeat;
+   background-position: left;
+   background-size: cover;
+   
+   &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, .30);
+   }
+}
+
+.container {
+   .flexCenter;
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 1rem 1.2rem;
+   
+   section {
+      .flexCenter;
+      flex-direction: column;
+      text-align: center;
+      transition: opacity .5s ease;
+      
+      h2 {
+         font-family: Grape Nuts;
+         font-size: 2.4rem;
+         letter-spacing: 4px;
+      }
+      
+      p {
+         max-width: 385px;
+         margin-top: 1rem;
+         margin-bottom: 1.2rem;
+         letter-spacing: 1.2px;
+      }
+      
+      &.initial {
+         button {
+            border: 2.5px solid rgba(225, 255, 255, .7);
+            border-radius: .6rem;
+            padding: 1rem 2.2rem;
+            font-size: 1.1rem;
+            letter-spacing: 4.8px;
+            color: white;
+            background: transparent;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity .5s ease;
+            
+            &.show {
+               opacity: 1;
+            }
+         }
+      }
+      
+      &.hide {
+         display: none;
+      }
+      
+      &.reset-opacity {
+         opacity: 0;
+      }
+   }
+}
