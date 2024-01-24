@@ -1,7 +1,7 @@
 window.onload = () => {
    const indexManager = {
       currentPageIndex: 0,
-      fadeBehavior: [['initial', 'rules']],
+      fadeBehavior: [['load', 'initial'], ['initial', 'rules']],
    }
 
    function fadeSection() {
@@ -21,6 +21,8 @@ window.onload = () => {
 
       ++indexManager.currentPageIndex
    }
+
+   fadeSection()
 
    // setup each fader-btn after 3 sec's
    setTimeout(() => {
