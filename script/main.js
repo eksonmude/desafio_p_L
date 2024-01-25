@@ -22,7 +22,7 @@ window.onload = () => {
       ++indexManager.currentPageIndex
    }
 
-   fadeSection()
+   // fadeSection()
 
    // setup each fader-btn after 3 sec's
    setTimeout(() => {
